@@ -1,0 +1,29 @@
+{
+  "name": "datepicker",
+  "version": "0.0.0",
+  "authors": [
+    "Ema93sh <m.magesh.66@gmail.com>"
+  ],
+  "description": "Datepicker in angularjs",
+  "keywords": [
+    "angularjs",
+    "datepicker"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-mocks": "~1.2.16",
+    "bootstrap": "~3.1.1",
+  },
+  "dependencies": {
+    "angular": "~1.2.16",
+    "d3": "~3.4.8",
+    "d3-tip": "~0.6.4"
+  }
+}

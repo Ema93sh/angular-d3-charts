@@ -1,0 +1,15 @@
+.datepicker-header
+{
+	width: 100%;
+	margin: 5px;
+}
+.datepicker-title {
+	width: 80px;
+	text-align: center;
+}
+
+.datepicker 
+{
+	width: 220px;
+	height: 150px;
+}

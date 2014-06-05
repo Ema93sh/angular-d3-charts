@@ -1,0 +1,35 @@
+{
+  "name": "datepicker",
+  "version": "0.0.0",
+  "description": "Datepicker directive in angularjs",
+  "main": "build/datepicker.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "angularjs",
+    "datepicker",
+    "directive"
+  ],
+  "dependencies": {
+    "bower": "^1.3.3"
+  },
+  "devDependencies": {
+    "karma": "~0.12.14",
+    "karma-jasmine": "~0.1.5",
+    "grunt": "^0.4.4",
+    "grunt-angular-templates": "^0.5.4",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-karma": "^0.8.3",
+    "grunt-contrib-clean": "^0.5.0",
+    "karma-coverage": "^0.2.1",
+    "karma-firefox-launcher": "^0.1.3",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "author": "Ema93sh",
+  "license": "MIT"
+}

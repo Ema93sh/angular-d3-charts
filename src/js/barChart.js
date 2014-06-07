@@ -34,9 +34,7 @@ ChartModule
 				$scope.$watch("data", function(newValue, oldValue) {
 					vis.selectAll("*").remove();
 					var max = 0;
-					var total = 0;
 					angular.forEach(newValue, function(data) {
-						total += data.value;
 						if (Number(data.value) > max) {
 							max = Number(data.value);
 						}
@@ -63,12 +61,12 @@ ChartModule
 						.attr("transform", "translate("+ frame.padding +", "+ (frame.height - frame.padding) +")")
 						.call(xAxis)
 						.selectAll("text")  
-					            .style("text-anchor", "end")
-					            .attr("dx", "-.8em")
-					            .attr("dy", ".15em")
-					            .attr("transform", function(d) {
-					                return "rotate(-65)"; 
-					                });
+				            .style("text-anchor", "end")
+				            .attr("dx", "-.8em")
+				            .attr("dy", ".15em")
+				            .attr("transform", function(d) {
+				                return "rotate(-65)"; 
+				                });
 
 					vis.call(tip);
 

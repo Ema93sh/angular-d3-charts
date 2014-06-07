@@ -24,7 +24,7 @@ module.exports = function(grunt) {
     },
     concat: {
       js:  {
-        src:  ['src/js/main.js', 'src/js/barChart.js', 'src/js/pieChart.js', '<%= ngtemplates.chart.dest %>'],
+        src:  ['src/js/main.js', 'src/js/barChart.js', 'src/js/pieChart.js', 'src/js/lineChart.js', '<%= ngtemplates.chart.dest %>'],
         dest: 'build/chart.js',
       },
       css: {

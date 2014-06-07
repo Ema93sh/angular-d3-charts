@@ -52,6 +52,43 @@ angular
 					color: "#FF5050",
 					label: "Auto Insurance"
 				}
-
 			];
+		$scope.lineChartData = [
+				{
+					x: new Date("10-01-2012"),
+					y: 500
+				},
+				{
+					x: new Date("01-02-2012"),
+					y: 200
+				},
+				{
+					x: new Date("02-03-2012"),
+					y: 10
+				},
+				{
+					x: new Date("06-04-2012"),
+					y: 150
+				},
+				{
+					x: new Date("12-15-2012"),
+					y: 200
+				},
+				{
+					x: new Date("08-12-2012"),
+					y: 20
+				},
+				{
+					x: new Date("1-25-2012"),
+					y: 500
+				},
+				{
+					x: new Date("1-26-2012"),
+					y: 100
+				},
+				{
+					x: new Date("10-21-2012"),
+					y: 100
+				}
+		];
 	}]);

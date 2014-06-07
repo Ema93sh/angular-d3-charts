@@ -54,8 +54,4 @@ angular
 				}
 
 			];
-
-		$scope.chartOptions = {
-			type: "Bar"
-		};
 	}]);

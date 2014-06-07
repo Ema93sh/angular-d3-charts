@@ -1,13 +1,10 @@
-angular.module('ui.chart', [])
-	.controller('ChartController', ['$scope', function($scope){
-	}])
-	.directive('mgChart', function(){
+ChartModule	
+	.directive('mgBarChart', function(){
 		return {
 			scope: {
 				data: '=chartData',
 				options: '=chartOptions'
 			}, 
-			controller: 'ChartController',
 			restrict: 'E',
 			templateUrl: 'chart.html',
 			replace: true,
@@ -83,13 +80,18 @@ angular.module('ui.chart', [])
 					var rects = vis.selectAll("rect").data(newValue).enter()
 							.append("rect");
 
-					rects.attr("x", function(data) {return xAxisScale(data.label) + frame.padding})
-							.attr("y", function(data) {return yAxisScale(data.value) + frame.padding})
+					rects.attr("x", function(data) {return xAxisScale(data.label) + frame.padding;})
+							.attr("y", frame.height - frame.padding)
 							.attr("width", xAxisScale.rangeBand())
-							.attr("height", function(data){return chart.height - yAxisScale(data.value)})
-							.style("fill", function(data){return data.color})
+							.attr("height", 0)
+							.style("fill", function(data){return data.color;})
 							.on('mouseover', tip.show)
-      						.on('mouseout', tip.hide);
+      						.on('mouseout', tip.hide)
+      						.transition()
+      						.attr("y", function(data) {return yAxisScale(data.value) + frame.padding;})
+							.attr("height", function(data){return chart.height - yAxisScale(data.value);})
+							.duration(1000);
+							
 				}, true);
 			}
 		};

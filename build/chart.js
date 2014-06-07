@@ -2,6 +2,12 @@ var ChartModule = angular.module('ui.chart', []);
 
 ChartModule	
 	.directive('mgBarChart', function(){
+		var tip = d3.tip()
+					  .attr('class', 'd3-tip')
+					  .offset([-10, 0])
+					  .html(function(d) {
+					    return "<strong>"+d.label +":</strong> <span style='color:red'>" + d.value + "</span>";
+		});
 		return {
 			scope: {
 				data: '=chartData',
@@ -37,12 +43,7 @@ ChartModule
 							max = Number(data.value);
 						}
 					});
-					var tip = d3.tip()
-					  .attr('class', 'd3-tip')
-					  .offset([-10, 0])
-					  .html(function(d) {
-					    return "<strong>"+d.label +":</strong> <span style='color:red'>" + d.value + "</span>";
-					 });
+					
 					
 					var xAxisScale = d3.scale.ordinal().rangeRoundBands([0, chart.width], .1);
 					xAxisScale.domain(newValue.map(function(d){ return d.label}));
@@ -100,6 +101,9 @@ ChartModule
 	});
 ChartModule
 	.directive('mgPieChart', function(){
+		var tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
+						return "<strong>"+d.data.label +":</strong> <span style='color:red'>" + d.data.value + "</span>";
+					});
 		return {
 			scope: {
 				'data' : '=chartData'
@@ -138,22 +142,20 @@ ChartModule
 							max = Number(data.value);
 						}
 					});
-					var tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
-						return "<strong>"+d.data.label +":</strong> <span style='color:red'>" + d.data.value + "</span>";
-					});
 					vis.call(tip);
 					var pie = d3.layout.pie().value(function(d){return d.value; });
 					var arc = d3.svg.arc().innerRadius(radius - 100).outerRadius(radius - 20);
 					var path = vis.selectAll("path").data(pie(newValue)).enter()
 							    .append("path")
 							    .attr("d", function(d) { 
-							    	var temp = {'startAngle':d.startAngle, 'endAngle':d.startAngle};
+							    	var temp = {'startAngle':d.startAngle, 'endAngle':d.endAngle - 0.3};
 							    	return arc(temp); 
 							    })
 							    .attr("fill", function(d) { return d.data.color; })
 							    .on('mouseover', tip.show)
       							.on('mouseout', tip.hide)
       							.transition()
+      							.delay(100)
       							.attr("d", arc)
       							.ease("bounce") 
       							.duration(1000);

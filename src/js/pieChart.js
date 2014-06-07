@@ -33,14 +33,6 @@ ChartModule
 
                 $scope.$watch("data", function(newValue, oldValue) {
                     vis.selectAll("*").remove();
-                    var max = 0;
-                    var total = 0;
-                    angular.forEach(newValue, function(data) {
-                        total += data.value;
-                        if (Number(data.value) > max) {
-                            max = Number(data.value);
-                        }
-                    });
                     vis.call(tip);
                     var pie = d3.layout.pie().sort(null).value(function(d){return d.value; });
                     var arc = d3.svg.arc().innerRadius(radius - 100).outerRadius(radius - 20);

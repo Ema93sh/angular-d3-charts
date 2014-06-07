@@ -6,6 +6,11 @@
   shape-rendering: crispEdges;
 }
 
+.line {
+  fill: none;
+  stroke-width: 3px;
+}
+
 .x.axis path {
   display: none;
 }
@@ -38,4 +43,8 @@
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;
+}
+
+.legend {
+  font-size: 16px;
 }

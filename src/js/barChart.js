@@ -84,8 +84,6 @@ ChartModule
 							.attr("width", xAxisScale.rangeBand())
 							.attr("height", 0)
 							.style("fill", function(data){return data.color;})
-							.on('mouseover', tip.show)
-      						.on('mouseout', tip.hide)
       						.transition()
       						.attr("y", function(data) {return yAxisScale(data.value) + frame.padding;})
 							.attr("height", function(data){return chart.height - yAxisScale(data.value);})

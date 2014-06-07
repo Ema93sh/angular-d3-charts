@@ -8,8 +8,7 @@
 
 .line {
   fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+  stroke-width: 3px;
 }
 
 .x.axis path {
@@ -44,4 +43,8 @@
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;
+}
+
+.legend {
+  font-size: 16px;
 }

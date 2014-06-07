@@ -53,7 +53,10 @@ angular
 					label: "Auto Insurance"
 				}
 			];
-		$scope.lineChartData = [
+		$scope.lineChartData = [{
+			label: "Rent",
+			color: "#FFCC99",
+			data:[
 				{
 					x: new Date("10-01-2012"),
 					y: 500
@@ -89,6 +92,48 @@ angular
 				{
 					x: new Date("10-21-2012"),
 					y: 100
-				}
-		];
+				}]
+			},
+			{
+			label: "Travel",
+			color: "#66CCFF",
+			data:[
+				{
+					x: new Date("03-21-2012"),
+					y: 320
+				},
+				{
+					x: new Date("01-12-2012"),
+					y: 533
+				},
+				{
+					x: new Date("04-03-2012"),
+					y: 431
+				},
+				{
+					x: new Date("07-04-2012"),
+					y: 100
+				},
+				{
+					x: new Date("11-15-2012"),
+					y: 403
+				},
+				// {
+				// 	x: new Date("02-12-2012"),
+				// 	y: 432
+				// },
+				// {
+				// 	x: new Date("1-25-2012"),
+				// 	y: 43
+				// },
+				// {
+				// 	x: new Date("1-26-2012"),
+				// 	y: 564
+				// },
+				{
+					x: new Date("10-21-2012"),
+					y: 21
+				}]
+			},
+			];
 	}]);

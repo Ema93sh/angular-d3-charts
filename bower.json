@@ -13,11 +13,11 @@
   ],
   "license": "MIT",
   "ignore": [
-    "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "GruntFile.js",
+    "package.json"
   ],
   "devDependencies": {
     "angular-mocks": "~1.2.16",

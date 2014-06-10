@@ -45,6 +45,9 @@ module.exports = function(grunt) {
     clean: {
       templates: {
         src: ["<%= ngtemplates.chart.dest %>"]
+      },
+      build: {
+        src: ["build/"]
       }
     },
     watch: {
@@ -74,6 +77,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('build', ['karma:test', 'ngtemplates', 'concat', 'uglify', 'clean']);
+  grunt.registerTask('build', ['karma:test', 'ngtemplates', 'concat', 'uglify', 'clean:templates']);
   grunt.registerTask('test', ['karma:test']);
 };

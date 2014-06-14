@@ -99,7 +99,7 @@ ChartModule
 	});
 ChartModule
     .directive('mgPieChart', function(){
-        var tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
+        var tip = d3.tip().direction('s').attr('class', 'd3-pie-tip').html(function(d) {
                         return "<strong>"+d.data.label +":</strong> <span style='color:red'>" + d.data.value + "</span>";
                     });
         return {
@@ -141,7 +141,12 @@ ChartModule
                                 .on('mouseover', tip.show)
                                 .on('mouseout', tip.hide)
                                 .transition()
-                                .delay(function(d, i) { return i * 400; })
+                                .delay(function(d, i) { 
+                                    if(d.value === 0) {
+                                        return 0;
+                                    }
+                                    return i * 400; 
+                                })
                                 .attrTween('d', function(d) {
                                    var i = d3.interpolate(d.startAngle+0.1, d.endAngle);
                                    return function(t) {
@@ -149,8 +154,13 @@ ChartModule
                                      return arc(d);
                                    };
                                 })
-                                .ease("bounce") 
-                                .duration(400);
+                                .ease("ease") 
+                                .duration(function(d){
+                                    if (d.value === 0){
+                                        return 0;
+                                    }
+                                    return 400;
+                            });
                 }, true);
             }
         };
